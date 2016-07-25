@@ -50,6 +50,10 @@
         kbd {
             font-family: 'Bree Serif', serif;
         }
+        #send{
+                color: white;
+    background-color: teal;
+        }
     </style>
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -125,22 +129,22 @@
 <div class="row">
     <div class="col-md-3">
         <div class="sidebar">
-           <img src="6.jpg" alt="" class="img-rounded center-block" height="250" width="250">
+           <img src="6.jpg" alt="" class="img-rounded center-block lazy" height="250" width="250">
        </div>
    </div>
    <div class="col-md-3">
     <div class="content">
-     <img src="1.jpg" alt="" class="img-rounded center-block" height="250" width="250">
+     <img src="1.jpg" alt="" class="img-rounded center-block lazy" height="250" width="250">
  </div>
 </div>
 <div class="col-md-3">
     <div class="content">
-     <img src="8.jpg" alt="" class="img-rounded center-block" height="250" width="250">
+     <img src="8.jpg" alt="" class="img-rounded center-block lazy" height="250" width="250">
  </div>
 </div>
 <div class="col-md-3">
     <div class="sidebar">
-     <img src="11.jpg" alt="" class="img-rounded center-block" height="250" width="250">
+     <img src="11.jpg" alt="" class="img-rounded center-block lazy" height="250" width="250">
  </div>
 </div>
 </div>
@@ -148,22 +152,22 @@
 <div class="row">
     <div class="col-md-3">
         <div class="sidebar">
-            <img src="4.jpg" alt="" class="img-rounded center-block" height="250" width="250">
+            <img src="4.jpg" alt="" class="img-rounded center-block lazy" height="250" width="250">
         </div>
     </div>
     <div class="col-md-3">
         <div class="content">
-         <img src="10.jpg" alt="" class="img-rounded center-block" height="250" width="250">
+         <img src="10.jpg" alt="" class="img-rounded center-block lazy" height="250" width="250">
      </div>
  </div>
  <div class="col-md-3">
     <div class="content">
-     <img src="3.jpg" alt="" class="img-rounded center-block" height="250" width="250">
+     <img src="3.jpg" alt="" class="img-rounded center-block lazy" height="250" width="250">
  </div>
 </div>
 <div class="col-md-3">
     <div class="sidebar">
-        <img src="5.jpg" alt="" class="img-rounded center-block" height="250" width="250">
+        <img src="5.jpg" alt="" class="img-rounded center-block lazy" height="250" width="250">
     </div>
 </div>
 </div>
@@ -179,7 +183,7 @@
                         <h2><kbd>Contact me</kbd></h2>
                     </div>
                 </div>
-                <form id="contact-form" method="post" action="contact.php" role="form">
+                <form name="sentMessage" id="contactForm" novalidate>
 
                     <div class="messages"></div>
 
@@ -188,24 +192,16 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="form_name">Firstname *</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                                    <label for="form_name">Your Name </label>
+                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your Name" required="required" data-error="Firstname is required.">
                                     <div class="help-block with-errors"></div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_lastname">Lastname *</label>
-                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="form_email">Email *</label>
-                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                    <label for="form_email">Email </label>
+                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email " required="required" data-error="Valid email is required.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -217,17 +213,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="form_message">Message *</label>
-                                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                    <label for="form_message">Message </label>
+                                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me " rows="4" required="required" data-error="Please,leave us a message."></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <input type="submit" class="btn btn-primary btn-send" value="Send message">
+                            <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button id="send" type="submit" class="btn btn-success btn-lg">Send</button>
                             </div>
+                        </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
@@ -268,11 +265,16 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="validator.js"></script>
 <script src="contact.js"></script>
 <!-- Scrolling Nav JavaScript -->
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/scrolling-nav.js"></script>
-
+<script src="jquery.js"></script>
+<script src="jquery.lazyload.js"></script>
+<script>
+	$( window ).load(function() {
+    $("img.lazy").lazyload();
+};
+</script>
 </body>
 </html>
